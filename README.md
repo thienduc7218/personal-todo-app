@@ -1,5 +1,5 @@
 # My very first Todo App
 
-What I use in this app: Nodejs(ExpressJS) with MongoDB(mongoose) database
+My very first project when I was an intern developer
 
-You can try it here: https://thienduc9712.herokuapp.com/
+What I use in this app: Nodejs(ExpressJS) with MongoDB(mongoose) database
