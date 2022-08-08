@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs')  %>  
+<body>
+    <div class="box-todo" id="heading"><h1><%= today %></h1></div>
+    <div class="box-todo">
+        <form class="form-todo" action="/delete" method="post" id="formDel"></form>
+            <% if (tasks.length > 0) { %>
+                <% for (let i = 0; i < tasks.length; i++) { %>
+                    <div class="item-todo">  
+                        <input type="checkbox" name="checkbox" value="<%= tasks[i] %>" form="formDel" onchange="this.form.submit()">
+                        <p><%= tasks[i] %></p>
+                    </div>
+            <% } %>
+            <% } else {%>  
+                <p>There are no tasks today!<br> Add some new task !</p>
+            <% } %> 
+        
+            <!-- Add new task -->
+        <form class="item-todo input" action="/" method="post">
+            <input class="input-todo" id="textsend" autocomplete="off" onkeyup="success()" placeholder="New task" type="text" name="taskInput">
+            <button class="btn-todo" id="button" type="submit" disabled>+</button>
+        </form>  
+        <form id="logout" action="/user_logout" method="post"></form>
+        <button class="btn-login" form="logout" type="submit">Save and Log Out</button>      
+    </div>
+
+<script>
+    function success() {
+	 if(document.getElementById('textsend').value==="") { 
+            document.getElementById('button').disabled = true; 
+        } else { 
+            document.getElementById('button').disabled = false;
+        }
+    }
+</script>
+</body>
+</html>
