@@ -1,0 +1,22 @@
+<html>
+<%- include('partials/head.ejs')  %>  
+<body>
+    <div class="box-login">
+        <form id="signup" action="/signup" method="get"></form>
+        <h2 style="text-align: center">Welcome to MyTodoApp!</h2>
+        <p><em>Please login </em></p>
+        <form class= "form-login" id="login" action="/user_login" method="post">
+            <div class="item-login">
+                <label for="email">Email</label>
+                <input class="input-login" type="text" name="email" required>
+            </div>
+            <div class="item-login">
+                <label for="password">Password</label>
+                <input class="input-login" type="password" name="password" required>
+            </div>
+        </form>
+        <button class="btn-login" form="login" type="submit">Login</button>
+        <button class="btn-login" form="signup" type="submit">Sign Up</button>
+    </div>
+</body>
+</html>
