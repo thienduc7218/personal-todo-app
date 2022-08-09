@@ -1,0 +1,14 @@
+version: "2"
+services:
+  mongo:
+    image: "mongo:latest"
+    container_name: todo-app
+    ports:
+      - "8080:27017"
+    mem_limit: 2G
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          memory: 128Mb
