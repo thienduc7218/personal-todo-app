@@ -5,7 +5,7 @@ const taskRoutes = require('./routes/taskRoutes')
 const session = require('express-session')
 const MongoDBStore = require('connect-mongodb-session')(session)
 
-let dbURI = 'mongodb://localhost:8080/todo-app'
+let dbURI = 'mongodb+srv://thienduc9712:39bUZjXDAPEXnAav@todoapp.cm1dv.mongodb.net/?retryWrites=true&w=majority'
 const store = new MongoDBStore({
   uri: dbURI,
   collection: 'sessions',
